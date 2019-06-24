@@ -1,11 +1,12 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import { Link } from 'gatsby';
 
-const IndexPage = () => (
+import Image from '../components/image';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
+const Index = () => (
   <Layout>
     <SEO title="Home" />
     <h1>Hi people</h1>
@@ -16,6 +17,6 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
-)
+);
 
-export default IndexPage
+export default Index;
