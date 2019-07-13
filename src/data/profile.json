@@ -1,0 +1,251 @@
+{
+    "about": {
+        "NZExperienceFrom": "2011-11-30"
+    },
+    "skills": {
+        "professional": {
+            "languages": {
+                "icon": "code",
+                "data": [{
+                        "name": "PHP",
+                        "icon": ["fab", "php"],
+                        "rating": 9,
+                        "experienceFrom": "2009-06-01"
+                    },
+                    {
+                        "name": "JavaScript",
+                        "icon": ["fab", "js"],
+                        "rating": 9,
+                        "experienceFrom": "2005-06-01"
+                    },
+                    {
+                        "name": "HTML4/5",
+                        "icon": ["fab", "html5"],
+                        "rating": 9,
+                        "experienceFrom": "2003-01-01"
+                    },
+                    {
+                        "name": "CSS/CSS3",
+                        "icon": ["fab", "css3-alt"],
+                        "rating": 7,
+                        "experienceFrom": "2006-01-01"
+                    }
+                ]
+            },
+            "database": {
+                "icon": "database",
+                "data": [{
+                        "name": "PostgreSQL",
+                        "image": "dbs_postgresql.png",
+                        "rating": 7,
+                        "tooltip": "Daily use database. My favourite DB."
+                    },
+                    {
+                        "name": "MySQL",
+                        "image": "dbs_mysql.png",
+                        "rating": 8,
+                        "experienceFrom": "2009-01-01"
+                    },
+                    {
+                        "name": "SQLite",
+                        "image": "dbs_sqlite.png",
+                        "rating": 8,
+                        "experienceFrom": "2016-04-01"
+                    }
+                ]
+            },
+            "Frameworks / Libraries": {
+                "icon": "coffee",
+                "data": [{
+                        "name": "Laravel",
+                        "icon": ["fab", "laravel"],
+                        "rating": 9,
+                        "tooltip": "I've been in love with Laravel since Laravel 4. My only option for the backend at the moment."
+                    },
+                    {
+                        "name": "CodeIgnitor",
+                        "image": "codeigniter.svg",
+                        "rating": 6,
+                        "experienceFrom": "2012-04-24"
+                    },
+                    {
+                        "name": "AngularJS",
+                        "icon": ["fab", "angular"],
+                        "rating": 9,
+                        "experienceFrom": "2013-06-01"
+                    },
+                    {
+                        "name": "Ionic 1",
+                        "image": "ionic.svg",
+                        "rating": 8,
+                        "experienceFrom": "2016-01-01"
+                    },
+                    {
+                        "name": "React",
+                        "icon": ["fab", "react"],
+                        "rating": 7,
+                        "tooltip": "My favourite Front-end library. I use the combo on all my new projects."
+                    },
+                    {
+                        "name": "Node.js",
+                        "icon": ["fab", "node"],
+                        "rating": 4,
+                        "tooltip": "Always the best option for me to write scripts and tools to make my life easier."
+                    }
+                ]
+            },
+            "Tools": {
+                "icon": "wrench",
+                "data": [{
+                        "name": "Gulp",
+                        "icon": ["fab", "gulp"],
+                        "rating": 9,
+                        "experienceFrom": "2016-01-01"
+                    },
+                    {
+                        "name": "Webpack",
+                        "rating": 6,
+                        "experienceFrom": "2017-04-01"
+                    },
+                    {
+                        "name": "Git",
+                        "rating": 7,
+                        "experienceFrom": "2012-02-01"
+                    }
+                ]
+            },
+            "Other": {
+                "icon": "fire",
+                "data": [{
+                        "name": "Linux / OSX / Ubuntu / CentOS",
+                        "rating": 6,
+                        "experienceFrom": "2012-01-01"
+                    },
+                    {
+                        "name": "Photoshop",
+                        "rating": 4,
+                        "experienceFrom": "2010-01-01"
+                    }
+                ]
+            }
+        },
+        "personal": {
+            "Generals": {
+                "icon": "bolt",
+                "data": [{
+                        "name": "Creativity",
+                        "rating": 9
+                    },
+                    {
+                        "name": "Team work",
+                        "rating": 9
+                    },
+                    {
+                        "name": "Communication",
+                        "rating": 9
+                    },
+                    {
+                        "name": "Hard work",
+                        "rating": 9
+                    }
+                ]
+            },
+            "Languages": {
+                "icon": "language",
+                "data": [{
+                        "name": "English",
+                        "rating": 8,
+                        "tooltip": "Daily use."
+                    },
+                    {
+                        "name": "Chinese",
+                        "rating": 9,
+                        "tooltip": "My native language."
+                    }
+                ]
+            }
+        }
+    },
+    "experiences": [{
+            "jobTitle": "Software Developer",
+            "type": "Permanent",
+            "company": "Webtools",
+            "url": "http://webtools.co.nz",
+            "startDate": "2018-04-16",
+            "description": [
+                "Develop and maintain softwares as required.",
+                "Maintain and improve the performance of databases",
+                "Software Testing",
+                "Prepare presentations, reports, proposals and other documens as required."
+            ]
+        },
+        {
+            "jobTitle": "Software Developer",
+            "type": "Permanent",
+            "company": "WSP | Opus",
+            "url": "http://wsp-opus.co.nz",
+            "startDate": "2015-10-27",
+            "endDate": "2018-04-13",
+            "description": [
+                "Develop, maintain and improve upon databases for various internal and external applications.",
+                "Analyse existing applications or works to formulate logic for new applications, devises logic procedures, prepares flowcharting, performs coding, data analysis, and tests/debugs programs through the application of professional programming concepts.",
+                "Design, develop, modify and evaluate web-based applications.",
+                "Liaise with other members in the NZ IT team to assist in resolving problems with software products or software systems.",
+                "Provide user support for existing Opus developed applications."
+            ]
+        },
+        {
+            "jobTitle": "Web Designer",
+            "type": "Permanent",
+            "company": "Authenticate (Rebranded from Ecardz)",
+            "url": "http://authenticate.co.nz",
+            "startDate": "2012-04-24",
+            "endDate": "2015-10-26",
+            "description": [
+                "Developed and keep maintaining Ecardz website (Version 3). Devising SEO strategies.",
+                "Designing and developing Quidz hosting platform, web application with Paymark gateway, CandoCard websites, All things horsey and all the other websites, web services and applications.",
+                "Designing PVC and business cards.",
+                "Design brochure, advertising artworks and writing documentation."
+            ]
+        },
+        {
+            "jobTitle": "Web Designer",
+            "type": "Short term employment",
+            "company": "Authenticate (Rebranded from Ecardz)",
+            "url": "http://ecardz.co.nz",
+            "startDate": "2011-11-30",
+            "endDate": "2011-12-19",
+            "description": [
+                "Redesigning and rebuiding the website using PHP, XHTML, CSS, JavaScript (JQuery) and Photoshop. All code meets the standard of W3C."
+            ]
+        },
+        {
+            "jobTitle": "Technician",
+            "type": "Permanent",
+            "company": "Huawei Technologies",
+            "url": "http://www.huawei.com",
+            "startDate": "2008-01-01",
+            "endDate": "2008-08-01",
+            "description": [
+                "Team leader in a trail-produce team in charge of the products' distribution and maintenance process, including test, track and problem solving of products, and management of the database of products."
+            ]
+        }
+    ],
+    "schoolarship": [{
+            "date": "2006 - 2007",
+            "name": "North China Institute of Aerospace Engineering (second-class scholarship)"
+        },
+        {
+            "date": "2007",
+            "name": "Challenge Cup of North China Institute of Aerospace Engineering (second prize)"
+        },
+        {
+            "date": "2006 - 2007",
+            "name": "Challenge Cup of North China Institute of Aerospace Engineering (third-class scholarship)"
+        },
+        {
+            "date": "2006 - 2007",
+            "name": "North China Institute of Aerospace Engineering (merit student cadre)"
+        }
+    ]
+}

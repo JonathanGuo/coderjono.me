@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-plugin-typescript-checker',
     'gatsby-plugin-tslint',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-styled-components',
     // Add after these plugins if used
     {
       resolve: `gatsby-plugin-purgecss`,
@@ -29,6 +30,14 @@ module.exports = {
           families: ['Source Sans Pro:300,400,700&display=swap']
         }
       }
+    },
+    'gatsby-transformer-json',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
