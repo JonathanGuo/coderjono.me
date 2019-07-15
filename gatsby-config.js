@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `Jonathan Guo`,
@@ -12,6 +14,15 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-styled-components',
     // Add after these plugins if used
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "App": path.resolve(__dirname, 'src'),
+        },
+        extensions: []
+      }
+    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
