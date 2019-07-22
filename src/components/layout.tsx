@@ -10,7 +10,7 @@ import React, { FunctionComponent, ReactNode } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Header from './header';
-import './layout.css';
+import './styles/layout.css';
 
 interface IProps {
   children: ReactNode;

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import ScrollDownMouse from 'App/components/ScrollDownMouse';
 import { diffFromNow, formatNZDate } from 'App/helpers/DateHelper';
+import FullScreenContainer from '../Common/FullScreenContainer';
 import SplashParticles from './SplashParticles';
 
 interface ISplashProps {
@@ -13,23 +14,20 @@ interface ISplashProps {
   };
 }
 
-const FullHeightContainer = styled.div`
-  height: 100vh;
-`;
-
 const HeroText = styled.p`
   position: absolute;
   top: 50%;
-  left: 25%;
-  width: 50%;
+  left: 5%;
+  width: 90%;
   transform: translateY(-50%);
   line-height: 2;
   font-size: 2vh;
   font-weight: 300;
 
-  @media (max-width: 768px) {
-    left: 5%;
-    width: 90%;
+  @media (min-width: 1024px) {
+    left: 25%;
+    width: 50%;
+    font-size: 3vh;
   }
 `;
 
@@ -40,7 +38,7 @@ const ExperienceAbbr = styled.abbr`
 
 const Splash: React.FunctionComponent<ISplashProps> = ({ about }) => {
   return (
-    <FullHeightContainer>
+    <FullScreenContainer>
       <HeroText>
         <span>I&rsquo;m a Senior Full Stack Developer who has over </span>
         <Tippy content={`Since ${formatNZDate(about.NZExperienceFrom)}`}>
@@ -52,7 +50,7 @@ const Splash: React.FunctionComponent<ISplashProps> = ({ about }) => {
       </HeroText>
       <SplashParticles />
       <ScrollDownMouse />
-    </FullHeightContainer>
+    </FullScreenContainer>
   );
 };
 

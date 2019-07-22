@@ -1,0 +1,57 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@tailwind screens;
+
+html,
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+#root {
+  background-color: var(--bodyBackground);
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+a {
+  color: var(--linkColor);
+  transition: color 1s;
+  text-decoration: none;
+
+  &:any-link {
+    color: var(--linkColor);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: color(var(--linkColor) blackness(-20%));
+  }
+
+  &.inverse {
+    color: var(--primaryColor);
+    &:any-link {
+      color: var(--primaryColor);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--linkColor);
+    }
+  }
+}

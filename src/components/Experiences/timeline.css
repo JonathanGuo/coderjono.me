@@ -1,0 +1,107 @@
+@import '../styles/variables.css';
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    @apply .mb-8;
+  }
+
+  .timeline-item-wrapper {
+    @apply .flex .w-full .py-4;
+    position: relative;
+    flex-direction: column;
+
+    @screen lg {
+      @apply .flex-row;
+
+      &:after {
+        position: absolute;
+        content: ' ';
+        top: 0;
+        bottom: 0;
+        left: 30%;
+        border-right: var(--timelineWidth) solid var(--primaryColor);
+        margin-left: -0.1rem;
+      }
+    }
+
+    .timeline {
+      position: relative;
+
+      @screen lg {
+        @apply .w-1/4 .ml-auto;
+      }
+
+      .datetime-wrapper {
+        @screen lg {
+          &:before {
+            position: absolute;
+            top: calc(var(--timelineWidth) * 10.2);
+            right: calc(var(--timelineWidth) * -13);
+            content: ' ';
+            display: block;
+            width: calc(var(--timelineWidth) * 15);
+            height: calc(var(--timelineWidth) * 15);
+            background: #fff;
+            border-radius: 50%;
+            border: calc(var(--timelineWidth) * 4) solid var(--bodyBackground);
+            background: var(--primaryColor);
+            z-index: 10;
+          }
+        }
+
+        .datetime {
+          @apply .bg-black .inline-block .text-white .p-4;
+          position: relative;
+          border: 0.1rem solid var(--primaryColor);
+
+          @screen lg {
+            @apply .float-right .mr-8;
+
+            &:before,
+            &:after {
+              position: absolute;
+              left: 100%;
+              top: 50%;
+              border: solid transparent;
+              content: ' ';
+              height: 0;
+              width: 0;
+              pointer-events: none;
+            }
+
+            &:before {
+              border-color: rgba(34, 41, 47, 0);
+              border-left-color: var(--primaryColor);
+              border-width: 16px;
+              margin-top: -16px;
+            }
+
+            &:after {
+              border-color: rgba(34, 41, 47, 0);
+              border-left-color: var(--primaryColor);
+              border-width: 15px;
+              margin-top: -15px;
+            }
+          }
+        }
+      }
+    }
+
+    .details {
+      @apply .px-4 .py-4 .border .border-black .shadow-lg;
+      line-height: 1.4rem;
+
+      @screen lg {
+        @apply .w-2/3 .mr-auto .pl-8 .border-0 .shadow-none;
+      }
+
+      .title {
+        font-weight: 700;
+      }
+    }
+  }
+}

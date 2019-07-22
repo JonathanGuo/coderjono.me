@@ -2,22 +2,20 @@ import React, { FunctionComponent } from 'react';
 
 import { graphql } from 'gatsby';
 
+import Experiences from 'App/components/Experiences';
 import Layout from 'App/components/layout';
 import SEO from 'App/components/seo';
 import Splash from 'App/components/Splash';
+import 'App/config/Icons';
+import { IExperience } from 'App/types/Experience';
 
 interface IProps {
   data: {
-    allDataJson: {
-      edges: [
-        {
-          node: {
-            about: {
-              NZExperienceFrom: string;
-            };
-          };
-        },
-      ];
+    dataJson: {
+      about: {
+        NZExperienceFrom: string;
+      };
+      experiences: IExperience[];
     };
   };
 }
@@ -25,19 +23,25 @@ interface IProps {
 const Index: FunctionComponent<IProps> = ({ data, ...rest }) => (
   <Layout>
     <SEO title="CoderJono" />
-    <Splash about={data.allDataJson.edges[0].node.about} />
+    <Splash about={data.dataJson.about} />
+    <Experiences experiences={data.dataJson.experiences} />
   </Layout>
 );
 
 export const query = graphql`
   {
-    allDataJson {
-      edges {
-        node {
-          about {
-            NZExperienceFrom
-          }
-        }
+    dataJson {
+      about {
+        NZExperienceFrom
+      }
+      experiences {
+        startDate
+        company
+        description
+        endDate
+        jobTitle
+        type
+        url
       }
     }
   }

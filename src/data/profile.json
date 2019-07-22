@@ -19,6 +19,12 @@
                         "experienceFrom": "2005-06-01"
                     },
                     {
+                        "name": "SQL",
+                        "icon": ["fas", "database"],
+                        "rating": 9,
+                        "experienceFrom": "2005-06-01"
+                    },
+                    {
                         "name": "HTML4/5",
                         "icon": ["fab", "html5"],
                         "rating": 9,
@@ -37,19 +43,26 @@
                 "data": [{
                         "name": "PostgreSQL",
                         "image": "dbs_postgresql.png",
-                        "rating": 7,
-                        "tooltip": "Daily use database. My favourite DB."
+                        "rating": 8,
+                        "tooltip": "My favourite DB."
                     },
                     {
                         "name": "MySQL",
                         "image": "dbs_mysql.png",
                         "rating": 8,
-                        "experienceFrom": "2009-01-01"
+                        "experienceFrom": "2009-01-01",
+                        "tooltip": "Daily use database."
                     },
                     {
                         "name": "SQLite",
                         "image": "dbs_sqlite.png",
                         "rating": 8,
+                        "experienceFrom": "2016-04-01"
+                    },
+                    {
+                        "name": "Redis",
+                        "image": "dbs_sqlite.png",
+                        "rating": 4,
                         "experienceFrom": "2016-04-01"
                     }
                 ]
@@ -60,13 +73,25 @@
                         "name": "Laravel",
                         "icon": ["fab", "laravel"],
                         "rating": 9,
-                        "tooltip": "I've been in love with Laravel since Laravel 4. My only option for the backend at the moment."
+                        "tooltip": "I've been in love with Laravel since Laravel 4. My only option for non-serverless application's backend."
+                    },
+                    {
+                        "name": "React",
+                        "icon": ["fab", "react"],
+                        "rating": 7,
+                        "tooltip": "My favourite Front-end library. I use the combo on all my new projects."
                     },
                     {
                         "name": "CodeIgnitor",
                         "image": "codeigniter.svg",
                         "rating": 6,
                         "experienceFrom": "2012-04-24"
+                    },
+                    {
+                        "name": "Yii1/2",
+                        "image": "codeigniter.svg",
+                        "rating": 6,
+                        "experienceFrom": "2018-04-16"
                     },
                     {
                         "name": "AngularJS",
@@ -79,12 +104,6 @@
                         "image": "ionic.svg",
                         "rating": 8,
                         "experienceFrom": "2016-01-01"
-                    },
-                    {
-                        "name": "React",
-                        "icon": ["fab", "react"],
-                        "rating": 7,
-                        "tooltip": "My favourite Front-end library. I use the combo on all my new projects."
                     },
                     {
                         "name": "Node.js",
@@ -109,7 +128,8 @@
                     },
                     {
                         "name": "Git",
-                        "rating": 7,
+                        "rating": 9,
+                        "icon": ["fab", "git-alt"],
                         "experienceFrom": "2012-02-01"
                     }
                 ]
@@ -167,7 +187,7 @@
         }
     },
     "experiences": [{
-            "jobTitle": "Software Developer",
+            "jobTitle": "Senior Software Developer",
             "type": "Permanent",
             "company": "Webtools",
             "url": "https://webtools.co.nz",

@@ -1,0 +1,9 @@
+:root {
+    --bodyBackground: #FFF;
+    --primaryColor: #222222;
+    --secondaryColor: #f57f17;
+    --fontColor: #222222;
+    --linkColor: #f57f17;
+    --timelineWidth: .1rem;
+    --fontSize: 1rem;
+}
