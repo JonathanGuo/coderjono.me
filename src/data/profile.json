@@ -89,7 +89,7 @@
                     },
                     {
                         "name": "Yii1/2",
-                        "image": "codeigniter.svg",
+                        "image": "yii.png",
                         "rating": 6,
                         "experienceFrom": "2018-04-16"
                     },
@@ -193,9 +193,9 @@
             "url": "https://webtools.co.nz",
             "startDate": "2018-04-16",
             "description": [
-                "Develop and maintain softwares as required.",
-                "Maintain and improve the performance of databases",
-                "Software Testing",
+                "Team Lead of Energy team. Develop and maintain softwares as required.",
+                "Maintain and improve the performance of servers and databases.",
+                "Software Testing and code review",
                 "Prepare presentations, reports, proposals and other documens as required."
             ]
         },

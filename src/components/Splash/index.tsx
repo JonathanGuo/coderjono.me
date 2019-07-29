@@ -41,7 +41,11 @@ const Splash: React.FunctionComponent<ISplashProps> = ({ about }) => {
     <FullScreenContainer>
       <HeroText>
         <span>I&rsquo;m a Senior Full Stack Developer who has over </span>
-        <Tippy content={`Since ${formatNZDate(about.NZExperienceFrom)}`}>
+        <Tippy
+          content={`Since ${formatNZDate(about.NZExperienceFrom)}`}
+          arrow={true}
+          followCursor={true}
+          distance={20}>
           <ExperienceAbbr>{diffFromNow(about.NZExperienceFrom)}</ExperienceAbbr>
         </Tippy>
         <span> based in New Zealand</span>. I have a diverse range of skills

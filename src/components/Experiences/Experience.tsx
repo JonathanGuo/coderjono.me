@@ -4,26 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { formatNZDate } from 'App/helpers/DateHelper';
 import { IExperience } from 'App/types/Experience';
-import styled from 'styled-components';
-import { primaryColor, timelineWidth } from './timelineConfig';
 
 interface IExperienceProps {
   experience: IExperience;
 }
-
-const TimelineItemWrapper = styled.div.attrs(props => ({
-  className: 'flex w-full py-4 relative',
-}))`
-  &:after {
-    position: absolute;
-    content: ' ';
-    top: 0;
-    bottom: 0;
-    left: 30%;
-    border-right: ${timelineWidth} solid ${primaryColor};
-    margin-left: -0.1rem;
-  }
-`;
 
 const Experience: React.FunctionComponent<IExperienceProps> = ({
   experience,

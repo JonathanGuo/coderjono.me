@@ -2,8 +2,11 @@ import React, { FunctionComponent } from 'react';
 
 import { graphql } from 'gatsby';
 
+import FullScreenContainer from 'App/components/Common/FullScreenContainer';
 import Experiences from 'App/components/Experiences';
 import Layout from 'App/components/layout';
+import PersonalSkills from 'App/components/PersonalSkills';
+import ProfessionalSkills from 'App/components/ProfessionalSkills';
 import SEO from 'App/components/seo';
 import Splash from 'App/components/Splash';
 import 'App/config/Icons';
@@ -25,6 +28,10 @@ const Index: FunctionComponent<IProps> = ({ data, ...rest }) => (
     <SEO title="CoderJono" />
     <Splash about={data.dataJson.about} />
     <Experiences experiences={data.dataJson.experiences} />
+    <FullScreenContainer>
+      <ProfessionalSkills />
+      <PersonalSkills />
+    </FullScreenContainer>
   </Layout>
 );
 

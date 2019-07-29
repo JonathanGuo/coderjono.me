@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment, { MomentInput } from 'moment';
 import pluralize from 'pluralize';
 
 /**
@@ -12,9 +12,9 @@ export function humanizeDateDiff(diff: number, unit: string): string {
 
 /**
  * Get datetime difference from now
- * @param {String} datetime
+ * @param {MomentInput} datetime
  */
-export function diffFromNow(datetime: string): string | null {
+export function diffFromNow(datetime: MomentInput): string | null {
   const now = moment();
   const from = moment(datetime);
 

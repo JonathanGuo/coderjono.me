@@ -6,7 +6,7 @@ import Particles from 'react-particles-js';
 const SplashParticles: React.FunctionComponent<{}> = props => {
   return (
     <Particles
-      height="100%"
+      height="100vh"
       params={{
         particles: {
           number: {
