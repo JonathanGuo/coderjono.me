@@ -3,8 +3,8 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ISkillset } from 'App/types/Skill';
 import { graphql, useStaticQuery } from 'gatsby';
-import { SectionTitle } from './Common/SectionTitle';
-import SkillSet from './Skillset';
+import { SectionTitle } from '../Common/SectionTitle';
+import SkillSet from '../Skillset';
 
 interface IPersonalSkillsQuery {
   dataJson: {

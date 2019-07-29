@@ -3,8 +3,8 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ISkillset } from 'App/types/Skill';
 import { graphql, useStaticQuery } from 'gatsby';
-import { SectionTitle } from './Common/SectionTitle';
-import SkillSet from './Skillset';
+import { SectionTitle } from '../Common/SectionTitle';
+import SkillSet from '../Skillset';
 
 interface IProfessionalSkillsQuery {
   dataJson: {
@@ -20,22 +20,25 @@ const ProfessionalSkills: React.FunctionComponent<{}> = props => {
       dataJson {
         skills {
           professional {
-            Other {
+            languages {
               icon
-              data {
-                experienceFrom
-                name
-                rating
-              }
-            }
-            Tools {
               data {
                 experienceFrom
                 icon
                 name
                 rating
               }
+            }
+            Frameworks: Frameworks___Libraries {
               icon
+              data {
+                experienceFrom
+                icon
+                image
+                name
+                rating
+                tooltip
+              }
             }
             database {
               icon
@@ -47,11 +50,19 @@ const ProfessionalSkills: React.FunctionComponent<{}> = props => {
                 tooltip
               }
             }
-            languages {
-              icon
+            Tools {
               data {
                 experienceFrom
                 icon
+                name
+                rating
+              }
+              icon
+            }
+            Other {
+              icon
+              data {
+                experienceFrom
                 name
                 rating
               }

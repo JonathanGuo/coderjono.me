@@ -31,7 +31,7 @@ const Skill: FunctionComponent<IProps> = ({ skill }) => {
           <div className="icon-wrapper">
             {skill.icon && <FontAwesomeIcon icon={skill.icon} />}
             {skill.image && (
-              <AsyncImage
+              <img
                 className="skill-image-icon"
                 src={`icons/${skill.image}`}
                 alt={skill.name}

@@ -5,10 +5,10 @@ import { graphql } from 'gatsby';
 import FullScreenContainer from 'App/components/Common/FullScreenContainer';
 import Experiences from 'App/components/Experiences';
 import Layout from 'App/components/layout';
-import PersonalSkills from 'App/components/PersonalSkills';
-import ProfessionalSkills from 'App/components/ProfessionalSkills';
+import PersonalSkills from 'App/components/sections/PersonalSkills';
+import ProfessionalSkills from 'App/components/sections/ProfessionalSkills';
+import Splash from 'App/components/sections/Splash';
 import SEO from 'App/components/seo';
-import Splash from 'App/components/Splash';
 import 'App/config/Icons';
 import { IExperience } from 'App/types/Experience';
 

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import ScrollDownMouse from 'App/components/ScrollDownMouse';
 import { diffFromNow, formatNZDate } from 'App/helpers/DateHelper';
-import FullScreenContainer from '../Common/FullScreenContainer';
+import FullScreenContainer from '../../Common/FullScreenContainer';
 import SplashParticles from './SplashParticles';
 
 interface ISplashProps {
