@@ -15,21 +15,36 @@ const BrandLink = styled(props => (
   font-size: 1.4rem;
 `;
 
+const Nav = styled.nav`
+  & > ul {
+    & > li {
+      float: left;
+      padding: 0 0.5rem;
+    }
+  }
+`;
+
 const Header: FunctionComponent<IProps> = ({ siteTitle }) => (
-  <header className="w-full mx-auto mb-2 py-4 bg-transparent pin-t fixed">
+  <header className="w-full mx-auto mb-2 py-4">
     <div className="container mx-auto flex justify-between">
       <h1 className="m-0">
         <BrandLink to="/">{`<${siteTitle} />`}</BrandLink>
       </h1>
-      <nav>
+      <Nav>
         <ul>
           <li>
+            <Link className="inverse" to="contact">
+              <FontAwesomeIcon icon="phone" fixedWidth={true} /> Contact
+            </Link>
+          </li>
+          <li>
             <a className="inverse" href="https://github.com/JonathanGuo">
-              <FontAwesomeIcon icon={faGithub} />
+              <FontAwesomeIcon icon={['fab', 'github']} fixedWidth={true} />{' '}
+              GitHub
             </a>
           </li>
         </ul>
-      </nav>
+      </Nav>
     </div>
   </header>
 );

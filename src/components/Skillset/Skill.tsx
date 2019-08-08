@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippy.js/react';
 import { ISkill } from 'App/types/Skill';
 import { diffFromNow } from '../../helpers/DateHelper';
-import AsyncImage from '../AsyncImage';
 import Rating from './Rating';
 
 interface IProps {

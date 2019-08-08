@@ -5,6 +5,7 @@ import {
   faAngular,
   faCss3Alt,
   faGitAlt,
+  faGithub,
   faGulp,
   faHtml5,
   faJs,
@@ -23,6 +24,8 @@ import {
   faFire,
   faHeart,
   faLanguage,
+  faPaperPlane,
+  faPhone,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -47,4 +50,7 @@ library.add(
   faLanguage,
   faHeart,
   faWrench,
+  faGithub,
+  faPhone,
+  faPaperPlane,
 );
