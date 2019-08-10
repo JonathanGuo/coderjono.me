@@ -1,10 +1,16 @@
 const path = require('path')
+require('dotenv').config({
+  path: '.env',
+});
+
+console.log(process.env.RECAPTCHA_SITE_KEY);
 
 module.exports = {
   siteMetadata: {
     title: `Jonathan Guo`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `My personal website`,
+    author: `Jonathan Guo <coderjono@gmail.com`,
+    recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,6 +19,14 @@ module.exports = {
     'gatsby-plugin-tslint',
     'gatsby-plugin-postcss',
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-recaptcha',
+      options: {
+        async: true,
+        defer: true,
+        args: `?render=explicit`,
+      },
+    },
     // Add after these plugins if used
     {
       resolve: `gatsby-plugin-alias-imports`,
@@ -69,6 +83,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      // automatically generate typings from graphql schema
+      resolve: 'gatsby-plugin-generate-typings',
+      options: {
+        dest: './src/types/graphql-types.d.ts',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

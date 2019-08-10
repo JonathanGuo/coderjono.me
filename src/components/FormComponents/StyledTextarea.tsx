@@ -5,6 +5,10 @@ import { IHasError } from './types';
 const StyledTextarea = styled.textarea<IHasError>`
   ${InputStyles}
   resize: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 export default StyledTextarea;

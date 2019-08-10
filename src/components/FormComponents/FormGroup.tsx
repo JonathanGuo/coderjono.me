@@ -18,6 +18,7 @@ const FormGroupWrapper = styled.div`
 interface IFormGroupProps {
   label: React.ReactNode;
   name: string;
+  disabled?: boolean;
   type?: string;
   placeholder?: string;
   rows?: number;
@@ -27,6 +28,7 @@ const FormGroup: React.FunctionComponent<IFormGroupProps & IFormikProps> = ({
   label,
   name,
   formik,
+  disabled = false,
   ...restProps
 }) => {
   const [focused, setFocused] = useState<boolean>(false);
@@ -53,7 +55,9 @@ const FormGroup: React.FunctionComponent<IFormGroupProps & IFormikProps> = ({
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         error={error}
-        render={({ field }: FieldProps) => <InputComponent {...field} />}
+        render={({ field }: FieldProps) => (
+          <InputComponent {...field} disabled={disabled} />
+        )}
       />
       {error && <FormError>{error}</FormError>}
     </FormGroupWrapper>
