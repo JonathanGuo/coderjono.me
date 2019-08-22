@@ -2037,8 +2037,6 @@ export type QuerySiteArgs = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
-  port?: Maybe<IntQueryOperatorInput>,
-  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
@@ -2127,8 +2125,6 @@ export type Site = Node & {
   children: Array<Node>,
   internal: Internal,
   siteMetadata?: Maybe<SiteSiteMetadata>,
-  port?: Maybe<Scalars['Int']>,
-  host?: Maybe<Scalars['String']>,
   polyfill?: Maybe<Scalars['Boolean']>,
   pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
@@ -2261,8 +2257,6 @@ export type SiteFieldsEnum =
   'siteMetadata___author' |
   'siteMetadata___recaptchaSiteKey' |
   'siteMetadata___apiBaseUri' |
-  'port' |
-  'host' |
   'polyfill' |
   'pathPrefix' |
   'buildTime';
@@ -2273,8 +2267,6 @@ export type SiteFilterInput = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
-  port?: Maybe<IntQueryOperatorInput>,
-  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
@@ -2468,9 +2460,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___defer' |
   'pluginCreator___pluginOptions___args' |
   'pluginCreator___pluginOptions___alias___App' |
-  'pluginCreator___pluginOptions___printRejected' |
-  'pluginCreator___pluginOptions___develop' |
-  'pluginCreator___pluginOptions___tailwind' |
   'pluginCreator___pluginOptions___google___families' |
   'pluginCreator___pluginOptions___name' |
   'pluginCreator___pluginOptions___path' |
@@ -2670,9 +2659,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___defer' |
   'pluginOptions___args' |
   'pluginOptions___alias___App' |
-  'pluginOptions___printRejected' |
-  'pluginOptions___develop' |
-  'pluginOptions___tailwind' |
   'pluginOptions___google___families' |
   'pluginOptions___name' |
   'pluginOptions___path' |
@@ -2800,9 +2786,6 @@ export type SitePluginPluginOptions = {
   defer?: Maybe<Scalars['Boolean']>,
   args?: Maybe<Scalars['String']>,
   alias?: Maybe<SitePluginPluginOptionsAlias>,
-  printRejected?: Maybe<Scalars['Boolean']>,
-  develop?: Maybe<Scalars['Boolean']>,
-  tailwind?: Maybe<Scalars['Boolean']>,
   google?: Maybe<SitePluginPluginOptionsGoogle>,
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
@@ -2829,9 +2812,6 @@ export type SitePluginPluginOptionsFilterInput = {
   defer?: Maybe<BooleanQueryOperatorInput>,
   args?: Maybe<StringQueryOperatorInput>,
   alias?: Maybe<SitePluginPluginOptionsAliasFilterInput>,
-  printRejected?: Maybe<BooleanQueryOperatorInput>,
-  develop?: Maybe<BooleanQueryOperatorInput>,
-  tailwind?: Maybe<BooleanQueryOperatorInput>,
   google?: Maybe<SitePluginPluginOptionsGoogleFilterInput>,
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
