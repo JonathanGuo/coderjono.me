@@ -8,11 +8,6 @@ import get from 'lodash/get';
  * @returns {AxiosInstance}
  */
 export function createAxios(config?: AxiosRequestConfig): AxiosInstance {
-  // Fetch CSRF token
-  const token = <HTMLMetaElement>(
-    document.head.querySelector('meta[name="csrf-token"]')
-  );
-
   // Create default axios instance with basic headers
   const defaultAxios = axios.create({
     headers: {
