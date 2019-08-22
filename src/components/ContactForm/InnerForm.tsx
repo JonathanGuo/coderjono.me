@@ -1,13 +1,14 @@
 import * as React from 'react';
+import Recaptcha from 'react-recaptcha';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Form, FormikProps } from 'formik';
 import { graphql, useStaticQuery } from 'gatsby';
-import Recaptcha from 'react-recaptcha';
+import styled from 'styled-components';
 
+import FormError from '../FormComponents/FormError';
 import FormGroup from '../FormComponents/FormGroup';
 import { IContactFormState } from './index';
-import styled from 'styled-components';
 
 declare global {
   // tslint:disable-next-line: interface-name
@@ -50,12 +51,6 @@ const InnerForm: React.FunctionComponent<
   FormikProps<IContactFormState>
 > = props => {
   const [recaptchaLoaded, setRecaptchaLoaded] = React.useState<boolean>(false);
-  const [recaptchaVerified, setRecaptchaVerified] = React.useState<boolean>(
-    false,
-  );
-  const [recaptchaError, setRecaptchError] = React.useState<string | null>(
-    null,
-  );
 
   const { site } = useStaticQuery(
     graphql`
@@ -74,9 +69,9 @@ const InnerForm: React.FunctionComponent<
     setRecaptchaLoaded(true);
   }
 
-  // Set verified flag to true to enable submit button
-  function handleVerify(): void {
-    setRecaptchaVerified(true);
+  // Set recaptcha response to true to enable submit button
+  function handleVerify(response: string): void {
+    props.setFieldValue('recaptcha', response);
   }
 
   return (
@@ -115,9 +110,12 @@ const InnerForm: React.FunctionComponent<
         onloadCallback={handleRecaptchaOnLoad}
         verifyCallback={handleVerify}
       />
+      {props.errors.recaptcha && props.touched.recaptcha && (
+        <FormError>{props.errors.recaptcha}</FormError>
+      )}
       <SubmitButton
         type="submit"
-        disabled={!recaptchaLoaded || !recaptchaVerified}>
+        disabled={!recaptchaLoaded || !props.values.recaptcha}>
         <FontAwesomeIcon
           icon="paper-plane"
           fixedWidth={true}

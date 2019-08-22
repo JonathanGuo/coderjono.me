@@ -2260,6 +2260,7 @@ export type SiteFieldsEnum =
   'siteMetadata___description' |
   'siteMetadata___author' |
   'siteMetadata___recaptchaSiteKey' |
+  'siteMetadata___apiBaseUri' |
   'port' |
   'host' |
   'polyfill' |
@@ -2862,6 +2863,7 @@ export type SiteSiteMetadata = {
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
   recaptchaSiteKey?: Maybe<Scalars['String']>,
+  apiBaseUri?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
@@ -2869,6 +2871,7 @@ export type SiteSiteMetadataFilterInput = {
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
   recaptchaSiteKey?: Maybe<StringQueryOperatorInput>,
+  apiBaseUri?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -2888,6 +2891,11 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>,
   glob?: Maybe<Scalars['String']>,
 };
+export type ApiBaseUriQueryVariables = {};
+
+
+export type ApiBaseUriQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'apiBaseUri'>> }> };
+
 export type RecaptchaSiteKeyQueryQueryVariables = {};
 
 

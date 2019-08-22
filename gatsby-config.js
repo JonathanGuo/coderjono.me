@@ -3,14 +3,13 @@ require('dotenv').config({
   path: '.env',
 });
 
-console.log(process.env.RECAPTCHA_SITE_KEY);
-
 module.exports = {
   siteMetadata: {
     title: `Jonathan Guo`,
     description: `My personal website`,
-    author: `Jonathan Guo <coderjono@gmail.com`,
+    author: `Jonathan Guo <coderjono@gmail.com>`,
     recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
+    apiBaseUri: process.env.API_BASEURI,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

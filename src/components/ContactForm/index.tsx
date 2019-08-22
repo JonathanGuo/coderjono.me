@@ -1,8 +1,12 @@
 import * as React from 'react';
 
 import { Formik, FormikActions } from 'formik';
+import { graphql, useStaticQuery } from 'gatsby';
 import * as Yup from 'yup';
 
+import api from 'App/api/Api';
+import Alert from 'App/components/Common/Alert';
+import { getFirstError } from 'App/helpers/FormHelper';
 import InnerForm from './InnerForm';
 
 export interface IContactFormState {
@@ -10,6 +14,7 @@ export interface IContactFormState {
   email: string;
   message: string;
   name: string;
+  recaptcha: string;
 }
 
 const initialValues: IContactFormState = {
@@ -17,6 +22,7 @@ const initialValues: IContactFormState = {
   email: '',
   message: '',
   name: '',
+  recaptcha: '',
 };
 
 const contactFormSchema = Yup.object().shape({
@@ -30,25 +36,51 @@ const contactFormSchema = Yup.object().shape({
   name: Yup.string()
     .max(255)
     .required('Please let me know your name'),
+  recaptcha: Yup.string().required('Please verify you are not a robot.'),
 });
 
 const ContactForm: React.FunctionComponent<{}> = () => {
+  const { site } = useStaticQuery(
+    graphql`
+      query ApiBaseUri {
+        site {
+          siteMetadata {
+            apiBaseUri
+          }
+        }
+      }
+    `,
+  );
+
+  const [alert, setAlert] = React.useState<string | null>(null);
+
   async function handleSubmit(
     values: IContactFormState,
     actions: FormikActions<IContactFormState>,
   ) {
-    console.log('submit', values);
+    setAlert(null);
+    try {
+      const { data } = await api.post(
+        `${site.siteMetadata.apiBaseUri}/contact`,
+        values,
+      );
+    } catch (error) {
+      setAlert(getFirstError(error));
+    }
   }
 
   return (
-    <Formik<IContactFormState>
-      initialValues={initialValues}
-      validateOnBlur={true}
-      validateOnChange={true}
-      validationSchema={contactFormSchema}
-      onSubmit={handleSubmit}
-      component={InnerForm}
-    />
+    <div>
+      {alert && <Alert>{alert} </Alert>}
+      <Formik<IContactFormState>
+        initialValues={initialValues}
+        validateOnBlur={true}
+        validateOnChange={true}
+        validationSchema={contactFormSchema}
+        onSubmit={handleSubmit}
+        component={InnerForm}
+      />
+    </div>
   );
 };
 
