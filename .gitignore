@@ -70,3 +70,7 @@ yarn-error.log
 
 # VSCode
 .vscode
+
+# Netfily
+# Exclude built folder
+functions

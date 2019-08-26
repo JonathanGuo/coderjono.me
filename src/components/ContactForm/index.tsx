@@ -60,10 +60,7 @@ const ContactForm: React.FunctionComponent<{}> = () => {
   ) {
     setAlert(null);
     try {
-      const { data } = await api.post(
-        `${site.siteMetadata.apiBaseUri}/contact`,
-        values,
-      );
+      const { data } = await api.post(`/.netlify/functions/contact`, values);
     } catch (error) {
       setAlert(getFirstError(error));
     }
