@@ -3,6 +3,10 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import { IResponse } from './types/types';
 
+import * as Dotenv from 'dotenv';
+
+Dotenv.config();
+
 const contactFormSchema = Yup.object().shape({
   company: Yup.string(),
   email: Yup.string()
@@ -26,19 +30,14 @@ const headers = {
 };
 
 function verifyRecaptcha(recaptchaResponse: string) {
-  return axios.post('https://www.google.com/recaptcha/api/siteverify', {
-    response: recaptchaResponse,
-    secret: process.env.CoderJonoRecaptchaSiteSecret,
+  return axios({
+    method: 'POST',
+    params: {
+      response: recaptchaResponse,
+      secret: process.env.RECAPTCHA_SITE_SECRET,
+    },
+    url: 'https://www.google.com/recaptcha/api/siteverify',
   });
-  // return rp({
-  //   url: 'https://www.google.com/recaptcha/api/siteverify',
-  //   method: 'POST',
-  //   formData: {
-  //     response: recaptchaResponse,
-  //     secret: functions.config().recaptcha.secret,
-  //   },
-  //   json: true,
-  // });
 }
 
 /**
@@ -67,13 +66,16 @@ exports.handler = async (
 
     const { recaptcha, email, name, message, company } = body;
 
+    // Validate input
     await contactFormSchema.validateSync(body);
 
+    // Verify recaptcha
     const { data: recaptchaRes } = await verifyRecaptcha(recaptcha);
-
     if (!recaptchaRes.success) {
       throw new Error('Please verify you are not a robot.');
     }
+
+    // Compose email
 
     // const ret = await axios(url);
     response = {

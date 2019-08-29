@@ -8,9 +8,13 @@
   },
   "author": "Jonathan Guo <coderjono@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "mailgun-js": "^0.22.0"
+  },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.31",
+    "@types/dotenv": "^6.1.1",
     "@types/node": "^12.7.2",
     "aws-lambda": "^0.1.2"
   }
