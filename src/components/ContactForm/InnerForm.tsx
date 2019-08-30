@@ -74,6 +74,11 @@ const InnerForm: React.FunctionComponent<
     props.setFieldValue('recaptcha', response);
   }
 
+  // Reset recaptcha response when expired
+  function handleRecaptchaExpired(): void {
+    props.setFieldValue('recaptcha', null);
+  }
+
   return (
     <Form>
       <FormGroup
@@ -109,6 +114,7 @@ const InnerForm: React.FunctionComponent<
         render="explicit"
         onloadCallback={handleRecaptchaOnLoad}
         verifyCallback={handleVerify}
+        expiredCallback={handleRecaptchaExpired}
       />
       {props.errors.recaptcha && props.touched.recaptcha && (
         <FormError>{props.errors.recaptcha}</FormError>
