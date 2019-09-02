@@ -2879,11 +2879,6 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>,
   glob?: Maybe<Scalars['String']>,
 };
-export type ApiBaseUriQueryVariables = {};
-
-
-export type ApiBaseUriQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'apiBaseUri'>> }> };
-
 export type RecaptchaSiteKeyQueryQueryVariables = {};
 
 
