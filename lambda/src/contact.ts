@@ -1,3 +1,4 @@
+import sgMail = require('@sendgrid/mail');
 import AWSLambda from 'aws-lambda';
 import axios from 'axios';
 import * as Yup from 'yup';
@@ -6,6 +7,7 @@ import { IResponse } from './types/types';
 import * as Dotenv from 'dotenv';
 
 Dotenv.config();
+sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
 const contactFormSchema = Yup.object().shape({
   company: Yup.string(),
@@ -76,12 +78,21 @@ exports.handler = async (
     }
 
     // Compose email
+    const mailData = {
+      from: email,
+      subject: `Hello from ${name}.`,
+      text: `${message}
 
-    // const ret = await axios(url);
+      ${company ? `Company: ${company}` : ''}
+      `,
+      to: 'coderjono@gmail.com',
+    };
+
+    await sgMail.send(mailData);
+
     response = {
       body: JSON.stringify({
-        message: 'hello world',
-        // location: ret.data.trim()
+        message: 'Success',
       }),
       headers: {
         'Access-Control-Allow-Headers': 'Content-Type',

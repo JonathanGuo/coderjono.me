@@ -86,28 +86,28 @@ const InnerForm: React.FunctionComponent<
         type="text"
         name="name"
         placeholder="Name"
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <FormGroup
         label="Email"
         type="email"
         name="email"
         placeholder="Email"
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <FormGroup
         label="Company"
         type="text"
         name="company"
         placeholder="Company"
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <FormGroup
         label="Message"
         name="message"
         rows={5}
         placeholder="Type it out..."
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <Recaptcha
         sitekey={site.siteMetadata.recaptchaSiteKey}
@@ -121,10 +121,13 @@ const InnerForm: React.FunctionComponent<
       )}
       <SubmitButton
         type="submit"
-        disabled={!recaptchaLoaded || !props.values.recaptcha}>
+        disabled={
+          !recaptchaLoaded || !props.values.recaptcha || props.isSubmitting
+        }>
         <FontAwesomeIcon
-          icon="paper-plane"
+          icon={props.isSubmitting ? 'circle-notch' : 'paper-plane'}
           fixedWidth={true}
+          spin={props.isSubmitting}
           className="mr-2"
         />
         Send

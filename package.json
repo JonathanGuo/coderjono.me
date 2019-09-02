@@ -92,7 +92,7 @@
     "start:app": "npm run develop",
     "start:lambda": "npm run prebuild:lambda && concurrently --kill-others \"tsc --project lambda --watch\" \"netlify-lambda serve functions\" ",
     "serve": "gatsby serve",
-    "copy:lambda": "copyfiles -u 1 ./lambda/.env ./functions",
+    "copy:lambda": "copyfiles -u 1 ./lambda/.env \"./lambda/node_modules/**/*\" ./functions",
     "prebuild:lambda": "mkdirp functions && netlify-lambda install && npm run copy:lambda && tsc --project lambda",
     "build": "run-p build:**",
     "build:app": "gatsby build",

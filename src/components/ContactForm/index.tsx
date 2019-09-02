@@ -1,13 +1,16 @@
 import * as React from 'react';
 
 import { Formik, FormikActions } from 'formik';
-import { graphql, useStaticQuery } from 'gatsby';
 import * as Yup from 'yup';
 
 import api from 'App/api/Api';
 import Alert from 'App/components/Common/Alert';
 import { getFirstError } from 'App/helpers/FormHelper';
 import InnerForm from './InnerForm';
+
+export interface IProps {
+  onSent: () => void;
+}
 
 export interface IContactFormState {
   company: string;
@@ -36,22 +39,12 @@ const contactFormSchema = Yup.object().shape({
   name: Yup.string()
     .max(255)
     .required('Please let me know your name'),
-  recaptcha: Yup.string().required('Please verify you are not a robot.'),
+  recaptcha: Yup.string()
+    .required('Please verify you are not a robot.')
+    .nullable(),
 });
 
-const ContactForm: React.FunctionComponent<{}> = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query ApiBaseUri {
-        site {
-          siteMetadata {
-            apiBaseUri
-          }
-        }
-      }
-    `,
-  );
-
+const ContactForm: React.FunctionComponent<IProps> = ({ onSent }) => {
   const [alert, setAlert] = React.useState<string | null>(null);
 
   async function handleSubmit(
@@ -59,11 +52,16 @@ const ContactForm: React.FunctionComponent<{}> = () => {
     actions: FormikActions<IContactFormState>,
   ) {
     setAlert(null);
+    actions.setSubmitting(true);
+
     try {
-      const { data } = await api.post(`/.netlify/functions/contact`, values);
+      await api.post(`/.netlify/functions/contact`, values);
+      onSent();
     } catch (error) {
       setAlert(getFirstError(error));
     }
+
+    actions.setSubmitting(false);
   }
 
   return (

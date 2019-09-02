@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -32,23 +32,48 @@ const VisuallyHiddenText = styled.span`
   border: 0;
 `;
 
-const Contact = () => (
-  <Layout>
-    <SEO title="Contact" />
-    <FullScreenContainer>
-      <ContactContainer>
-        <Box>
-          <h1 className="text-6xl">Let&rsquo;s get in touch</h1>
-          <p className="leading-loose text-gray-600 mb-4">
-            I would love to drink <FontAwesomeIcon icon="coffee" />{' '}
-            <VisuallyHiddenText>coffee</VisuallyHiddenText> with you and turn
-            your great ideas into reality.
-          </p>
-          <ContactForm />
-        </Box>
-      </ContactContainer>
-    </FullScreenContainer>
-  </Layout>
-);
+const Contact = () => {
+  const [isSent, setIsSent] = useState(false);
+
+  function handleIsSent() {
+    setIsSent(true);
+  }
+
+  return (
+    <Layout>
+      <SEO title="Contact" />
+      <FullScreenContainer>
+        <ContactContainer>
+          <Box>
+            <h1 className="text-6xl">
+              {!isSent && <span>Let&rsquo;s get in touch</span>}
+              {isSent && <span>Thank you for contacing me</span>}
+            </h1>
+            <p className="leading-loose text-gray-600 mb-4">
+              {!isSent && (
+                <span>
+                  I would love to drink <FontAwesomeIcon icon="coffee" />{' '}
+                  <VisuallyHiddenText>coffee</VisuallyHiddenText> with you and
+                  turn your great ideas into reality.
+                </span>
+              )}
+              {isSent && (
+                <>
+                  <p>I will get in touch with you as soon as possible.</p>
+                  <p>
+                    Let&rsquo; meet with a cup of{' '}
+                    <FontAwesomeIcon icon="coffee" />{' '}
+                    <VisuallyHiddenText>coffee</VisuallyHiddenText>.
+                  </p>
+                </>
+              )}
+            </p>
+            {!isSent && <ContactForm onSent={handleIsSent} />}
+          </Box>
+        </ContactContainer>
+      </FullScreenContainer>
+    </Layout>
+  );
+};
 
 export default Contact;

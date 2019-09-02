@@ -17,6 +17,7 @@ import {
 import {
   faBolt,
   faBriefcase,
+  faCircleNotch,
   faCode,
   faCoffee,
   faDatabase,
@@ -53,4 +54,5 @@ library.add(
   faGithub,
   faPhone,
   faPaperPlane,
+  faCircleNotch,
 );

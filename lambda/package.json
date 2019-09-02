@@ -9,8 +9,8 @@
   "author": "Jonathan Guo <coderjono@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.1.0",
-    "mailgun-js": "^0.22.0"
+    "@sendgrid/mail": "^6.4.0",
+    "dotenv": "^8.1.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.31",
