@@ -74,6 +74,11 @@ const InnerForm: React.FunctionComponent<
     props.setFieldValue('recaptcha', response);
   }
 
+  // Reset recaptcha response when expired
+  function handleRecaptchaExpired(): void {
+    props.setFieldValue('recaptcha', null);
+  }
+
   return (
     <Form>
       <FormGroup
@@ -81,44 +86,48 @@ const InnerForm: React.FunctionComponent<
         type="text"
         name="name"
         placeholder="Name"
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <FormGroup
         label="Email"
         type="email"
         name="email"
         placeholder="Email"
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <FormGroup
         label="Company"
         type="text"
         name="company"
         placeholder="Company"
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <FormGroup
         label="Message"
         name="message"
         rows={5}
         placeholder="Type it out..."
-        disabled={!recaptchaLoaded}
+        disabled={!recaptchaLoaded && props.isSubmitting}
       />
       <Recaptcha
         sitekey={site.siteMetadata.recaptchaSiteKey}
         render="explicit"
         onloadCallback={handleRecaptchaOnLoad}
         verifyCallback={handleVerify}
+        expiredCallback={handleRecaptchaExpired}
       />
       {props.errors.recaptcha && props.touched.recaptcha && (
         <FormError>{props.errors.recaptcha}</FormError>
       )}
       <SubmitButton
         type="submit"
-        disabled={!recaptchaLoaded || !props.values.recaptcha}>
+        disabled={
+          !recaptchaLoaded || !props.values.recaptcha || props.isSubmitting
+        }>
         <FontAwesomeIcon
-          icon="paper-plane"
+          icon={props.isSubmitting ? 'circle-notch' : 'paper-plane'}
           fixedWidth={true}
+          spin={props.isSubmitting}
           className="mr-2"
         />
         Send

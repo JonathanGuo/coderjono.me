@@ -1,0 +1,21 @@
+{
+  "name": "lambda-src",
+  "version": "1.0.0",
+  "description": "Lambda function for coderjono.me",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Guo <coderjono@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "dotenv": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.31",
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^12.7.2",
+    "aws-lambda": "^0.1.2"
+  }
+}
