@@ -41,7 +41,6 @@ module.exports = {
         args: `?render=explicit`,
       },
     },
-    // Add after these plugins if used
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
@@ -87,6 +86,14 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: [
+          "https://fonts.googleapis.com",
+        ],
+      }
     },
     {
       // automatically generate typings from graphql schema
