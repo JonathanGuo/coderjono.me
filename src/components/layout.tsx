@@ -26,8 +26,11 @@ interface IProps {
   children: ReactNode;
 }
 
-ReactGA.initialize('UA-145342146-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
+// tslint:disable-next-line: no-typeof-undefined
+if (typeof window !== 'undefined') {
+  ReactGA.initialize('UA-145342146-1');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 const Layout: FunctionComponent<IProps> = ({ children }) => {
   const data = useStaticQuery(graphql`
