@@ -80,7 +80,7 @@ const Mouse = styled.span`
 
 const ScrollDownMouse: React.FunctionComponent<{}> = props => (
   <ScrollButton>
-    <InnerButton>
+    <InnerButton aria-label="Scroll Down">
       <Mouse>
         <span />
       </Mouse>
