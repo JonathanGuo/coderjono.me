@@ -2478,11 +2478,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___display' |
   'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___dest' |
-  'pluginCreator___pluginOptions___trackingId' |
-  'pluginCreator___pluginOptions___head' |
-  'pluginCreator___pluginOptions___anonymize' |
-  'pluginCreator___pluginOptions___respectDNT' |
-  'pluginCreator___pluginOptions___cookieDomain' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2682,11 +2677,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___display' |
   'pluginOptions___icon' |
   'pluginOptions___dest' |
-  'pluginOptions___trackingId' |
-  'pluginOptions___head' |
-  'pluginOptions___anonymize' |
-  'pluginOptions___respectDNT' |
-  'pluginOptions___cookieDomain' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2814,11 +2804,6 @@ export type SitePluginPluginOptions = {
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   dest?: Maybe<Scalars['String']>,
-  trackingId?: Maybe<Scalars['String']>,
-  head?: Maybe<Scalars['Boolean']>,
-  anonymize?: Maybe<Scalars['Boolean']>,
-  respectDNT?: Maybe<Scalars['Boolean']>,
-  cookieDomain?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2845,11 +2830,6 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   dest?: Maybe<StringQueryOperatorInput>,
-  trackingId?: Maybe<StringQueryOperatorInput>,
-  head?: Maybe<BooleanQueryOperatorInput>,
-  anonymize?: Maybe<BooleanQueryOperatorInput>,
-  respectDNT?: Maybe<BooleanQueryOperatorInput>,
-  cookieDomain?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
