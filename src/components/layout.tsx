@@ -1,8 +1,8 @@
 import React, { FunctionComponent, ReactNode } from 'react';
+import ReactGA from 'react-ga';
 
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
-
 import Header from './header';
 import './styles/layout.css';
 
@@ -25,6 +25,9 @@ const Main = styled.main`
 interface IProps {
   children: ReactNode;
 }
+
+ReactGA.initialize('UA-145342146-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const Layout: FunctionComponent<IProps> = ({ children }) => {
   const data = useStaticQuery(graphql`
