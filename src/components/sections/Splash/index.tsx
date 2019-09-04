@@ -49,8 +49,8 @@ const Splash: React.FunctionComponent<ISplashProps> = ({ about }) => {
           <ExperienceAbbr>{diffFromNow(about.NZExperienceFrom)}</ExperienceAbbr>
         </Tippy>
         <span> based in New Zealand</span>. I have a diverse range of skills
-        bake web and mobile applications. Usually with Laravel, React, React
-        Native and Docker.
+        developing web and mobile applications. Usually with Laravel, React,
+        React Native and Docker.
       </HeroText>
       <SplashParticles />
       <ScrollDownMouse />

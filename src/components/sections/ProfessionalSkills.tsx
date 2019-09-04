@@ -20,7 +20,7 @@ const ProfessionalSkills: React.FunctionComponent<{}> = props => {
       dataJson {
         skills {
           professional {
-            languages {
+            Languages {
               icon
               data {
                 experienceFrom
@@ -40,7 +40,7 @@ const ProfessionalSkills: React.FunctionComponent<{}> = props => {
                 tooltip
               }
             }
-            database {
+            Database {
               icon
               data {
                 experienceFrom

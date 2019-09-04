@@ -4,7 +4,7 @@
     },
     "skills": {
         "professional": {
-            "languages": {
+            "Languages": {
                 "icon": "code",
                 "data": [{
                         "name": "PHP",
@@ -38,7 +38,7 @@
                     }
                 ]
             },
-            "database": {
+            "Database": {
                 "icon": "database",
                 "data": [{
                         "name": "PostgreSQL",
@@ -82,7 +82,7 @@
                         "tooltip": "My favourite Front-end library. I use the combo on all my new projects."
                     },
                     {
-                        "name": "CodeIgnitor",
+                        "name": "CodeIgniter",
                         "image": "codeigniter.svg",
                         "rating": 6,
                         "experienceFrom": "2012-04-24"
