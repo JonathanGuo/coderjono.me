@@ -61,7 +61,7 @@ const Contact = () => {
                 <>
                   <p>I will get in touch with you as soon as possible.</p>
                   <p>
-                    Let&rsquo; meet with a cup of{' '}
+                    Let&rsquo;s meet with a cup of{' '}
                     <FontAwesomeIcon icon="coffee" />{' '}
                     <VisuallyHiddenText>coffee</VisuallyHiddenText>.
                   </p>
