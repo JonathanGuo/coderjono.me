@@ -4,6 +4,8 @@ import ReactGA from 'react-ga';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import Header from './header';
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import './styles/layout.css';
 
 const Wrapper = styled.div`
