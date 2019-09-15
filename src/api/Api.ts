@@ -20,15 +20,17 @@ export function createAxios(config?: AxiosRequestConfig): AxiosInstance {
     res => res,
     res => {
       switch (res.response.status) {
-        case 403:
+        case 403: {
           return Promise.reject(new Error(res.response.data.message));
-        case 419:
+        }
+        case 419: {
           return Promise.reject(
             new Error(
               'Authentication Timeout. Please refresh your page and try again.',
             ),
           );
-        case 422:
+        }
+        case 422: {
           const errors = get(res, 'response.data.errors');
           if (errors) {
             return Promise.reject(errors);
@@ -37,12 +39,15 @@ export function createAxios(config?: AxiosRequestConfig): AxiosInstance {
           return Promise.reject(
             new Error(get(res, 'response.data.message', res)),
           );
-        case 500:
+        }
+        case 500: {
           return Promise.reject(
             new Error('Server error. Please try again later.'),
           );
-        default:
+        }
+        default: {
           return Promise.reject(res);
+        }
       }
     },
   );

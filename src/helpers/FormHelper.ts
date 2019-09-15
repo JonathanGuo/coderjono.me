@@ -4,6 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import isPlainObject from 'lodash/isPlainObject';
 import isString from 'lodash/isString';
 import toArray from 'lodash/toArray';
+import toString from 'lodash/toString';
 
 import { AcceptableError } from './../types/Common';
 
@@ -12,7 +13,7 @@ import { AcceptableError } from './../types/Common';
  * @param  {string} key
  * @returns any
  */
-export function getError(error: AcceptableError = null, key: string): any {
+export function getError(error: AcceptableError = null, key: string): string {
   if (isString(error)) {
     return error;
   }
@@ -21,22 +22,7 @@ export function getError(error: AcceptableError = null, key: string): any {
     return error.message;
   }
 
-  return get(error, key);
-}
-
-/**
- * @param  {AcceptableError=null} error
- * @param  {string} key
- * @returns any
- */
-export function getFirstError(
-  error: AcceptableError = null,
-  key: string | null = null,
-): any {
-  const errorCollection = key
-    ? getError(error, key)
-    : getFirstErrorGroup(error);
-  return head(errorCollection);
+  return toString(get(error, key));
 }
 
 /**
@@ -68,4 +54,19 @@ export function getFirstErrorGroup(error: AcceptableError = null): string[] {
   // If nil or empty
   // then always return empty array
   return [];
+}
+
+/**
+ * @param  {AcceptableError=null} error
+ * @param  {string} key
+ * @returns any
+ */
+export function getFirstError(
+  error: AcceptableError = null,
+  key: string | null = null,
+): string {
+  const errorCollection = key
+    ? getError(error, key)
+    : getFirstErrorGroup(error);
+  return toString(head(errorCollection));
 }

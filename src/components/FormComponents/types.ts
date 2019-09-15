@@ -5,5 +5,5 @@ export interface IHasError {
 }
 
 export interface IFormikProps {
-  formik: FormikContext<any>;
+  formik: FormikContext<object>;
 }
