@@ -66,9 +66,15 @@
     "@types/react-recaptcha": "^2.3.3",
     "@types/styled-components": "^4.1.18",
     "@types/yup": "^0.26.22",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "@typescript-eslint/typescript-estree": "^2.1.0",
     "autoprefixer": "^9.6.1",
     "babel-plugin-styled-components": "^1.10.6",
     "concurrently": "^4.1.2",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-graphql": "^3.0.3",
     "gatsby-plugin-tslint": "0.0.2",
     "graphql": "^14.4.2",
     "graphql-code-generator": "^0.18.2",
@@ -102,7 +108,8 @@
     "production": "./build.env.sh && npm run build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "eslint": "eslint src --ext ts"
   },
   "repository": {
     "type": "git",
