@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faAngular,
+  faAws,
   faCss3Alt,
+  faDev,
   faGitAlt,
   faGithub,
   faGulp,
@@ -27,6 +29,7 @@ import {
   faLanguage,
   faPaperPlane,
   faPhone,
+  faPlayCircle,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -55,4 +58,7 @@ library.add(
   faPhone,
   faPaperPlane,
   faCircleNotch,
+  faAws,
+  faDev,
+  faPlayCircle,
 );
