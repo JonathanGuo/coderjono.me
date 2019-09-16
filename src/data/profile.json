@@ -35,6 +35,12 @@
                         "icon": ["fab", "css3-alt"],
                         "rating": 7,
                         "experienceFrom": "2006-01-01"
+                    },
+                    {
+                        "name": "Bash",
+                        "image": "bash.svg",
+                        "rating": 4,
+                        "experienceFrom": "2016-04-01"
                     }
                 ]
             },
@@ -112,6 +118,31 @@
                         "tooltip": "Always the best option for me to write scripts and tools to make my life easier."
                     }
                 ]
+            },
+            "DevOps": {
+                "icon": ["fab", "dev"],
+                "data": [{
+                    "name": "AWS",
+                    "icon": ["fab", "aws"],
+                    "image": null,
+                    "rating": 6,
+                    "experienceFrom": "2018-04-01",
+                    "tooltip": "The best of best"
+                }, {
+                    "name": "CI/CD",
+                    "icon": ["fas", "play-circle"],
+                    "image": null,
+                    "rating": 6,
+                    "experienceFrom": "2018-04-01",
+                    "tooltip": "I go with CodePipeline & GitHub Actions"
+                }, {
+                    "name": "Ansible",
+                    "icon": null,
+                    "image": "ansible.svg",
+                    "rating": 4,
+                    "experienceFrom": "2018-04-01",
+                    "tooltip": "The tools I automate all my repeatitive server management works"
+                }]
             },
             "Tools": {
                 "icon": "wrench",

@@ -219,6 +219,8 @@ export type DataJsonFieldsEnum =
   'skills___professional___Database___data' |
   'skills___professional___Frameworks___Libraries___icon' |
   'skills___professional___Frameworks___Libraries___data' |
+  'skills___professional___DevOps___icon' |
+  'skills___professional___DevOps___data' |
   'skills___professional___Tools___icon' |
   'skills___professional___Tools___data' |
   'skills___professional___Other___icon' |
@@ -347,6 +349,7 @@ export type DataJsonSkillsProfessional = {
   Languages?: Maybe<DataJsonSkillsProfessionalLanguages>,
   Database?: Maybe<DataJsonSkillsProfessionalDatabase>,
   Frameworks___Libraries?: Maybe<DataJsonSkillsProfessionalFrameworks___Libraries>,
+  DevOps?: Maybe<DataJsonSkillsProfessionalDevOps>,
   Tools?: Maybe<DataJsonSkillsProfessionalTools>,
   Other?: Maybe<DataJsonSkillsProfessionalOther>,
 };
@@ -389,10 +392,51 @@ export type DataJsonSkillsProfessionalDatabaseFilterInput = {
   data?: Maybe<DataJsonSkillsProfessionalDatabaseDataFilterListInput>,
 };
 
+export type DataJsonSkillsProfessionalDevOps = {
+  icon?: Maybe<Array<Maybe<Scalars['String']>>>,
+  data?: Maybe<Array<Maybe<DataJsonSkillsProfessionalDevOpsData>>>,
+};
+
+export type DataJsonSkillsProfessionalDevOpsData = {
+  name?: Maybe<Scalars['String']>,
+  icon?: Maybe<Array<Maybe<Scalars['String']>>>,
+  image?: Maybe<Scalars['String']>,
+  rating?: Maybe<Scalars['Int']>,
+  experienceFrom?: Maybe<Scalars['Date']>,
+  tooltip?: Maybe<Scalars['String']>,
+};
+
+
+export type DataJsonSkillsProfessionalDevOpsDataExperienceFromArgs = {
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
+};
+
+export type DataJsonSkillsProfessionalDevOpsDataFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>,
+  icon?: Maybe<StringQueryOperatorInput>,
+  image?: Maybe<StringQueryOperatorInput>,
+  rating?: Maybe<IntQueryOperatorInput>,
+  experienceFrom?: Maybe<DateQueryOperatorInput>,
+  tooltip?: Maybe<StringQueryOperatorInput>,
+};
+
+export type DataJsonSkillsProfessionalDevOpsDataFilterListInput = {
+  elemMatch?: Maybe<DataJsonSkillsProfessionalDevOpsDataFilterInput>,
+};
+
+export type DataJsonSkillsProfessionalDevOpsFilterInput = {
+  icon?: Maybe<StringQueryOperatorInput>,
+  data?: Maybe<DataJsonSkillsProfessionalDevOpsDataFilterListInput>,
+};
+
 export type DataJsonSkillsProfessionalFilterInput = {
   Languages?: Maybe<DataJsonSkillsProfessionalLanguagesFilterInput>,
   Database?: Maybe<DataJsonSkillsProfessionalDatabaseFilterInput>,
   Frameworks___Libraries?: Maybe<DataJsonSkillsProfessionalFrameworks___LibrariesFilterInput>,
+  DevOps?: Maybe<DataJsonSkillsProfessionalDevOpsFilterInput>,
   Tools?: Maybe<DataJsonSkillsProfessionalToolsFilterInput>,
   Other?: Maybe<DataJsonSkillsProfessionalOtherFilterInput>,
 };
@@ -447,6 +491,7 @@ export type DataJsonSkillsProfessionalLanguagesData = {
   icon?: Maybe<Array<Maybe<Scalars['String']>>>,
   rating?: Maybe<Scalars['Int']>,
   experienceFrom?: Maybe<Scalars['Date']>,
+  image?: Maybe<Scalars['String']>,
 };
 
 
@@ -462,6 +507,7 @@ export type DataJsonSkillsProfessionalLanguagesDataFilterInput = {
   icon?: Maybe<StringQueryOperatorInput>,
   rating?: Maybe<IntQueryOperatorInput>,
   experienceFrom?: Maybe<DateQueryOperatorInput>,
+  image?: Maybe<StringQueryOperatorInput>,
 };
 
 export type DataJsonSkillsProfessionalLanguagesDataFilterListInput = {
@@ -1892,19 +1938,19 @@ export type PotraceTurnPolicy =
 
 export type Query = {
   file?: Maybe<File>,
-  allFile?: Maybe<FileConnection>,
+  allFile: FileConnection,
   imageSharp?: Maybe<ImageSharp>,
-  allImageSharp?: Maybe<ImageSharpConnection>,
+  allImageSharp: ImageSharpConnection,
   sitePage?: Maybe<SitePage>,
-  allSitePage?: Maybe<SitePageConnection>,
+  allSitePage: SitePageConnection,
   sitePlugin?: Maybe<SitePlugin>,
-  allSitePlugin?: Maybe<SitePluginConnection>,
+  allSitePlugin: SitePluginConnection,
   site?: Maybe<Site>,
-  allSite?: Maybe<SiteConnection>,
+  allSite: SiteConnection,
   directory?: Maybe<Directory>,
-  allDirectory?: Maybe<DirectoryConnection>,
+  allDirectory: DirectoryConnection,
   dataJson?: Maybe<DataJson>,
-  allDataJson?: Maybe<DataJsonConnection>,
+  allDataJson: DataJsonConnection,
 };
 
 
@@ -2037,6 +2083,8 @@ export type QuerySiteArgs = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  port?: Maybe<IntQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
@@ -2125,6 +2173,8 @@ export type Site = Node & {
   children: Array<Node>,
   internal: Internal,
   siteMetadata?: Maybe<SiteSiteMetadata>,
+  port?: Maybe<Scalars['Int']>,
+  host?: Maybe<Scalars['String']>,
   polyfill?: Maybe<Scalars['Boolean']>,
   pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
@@ -2257,6 +2307,8 @@ export type SiteFieldsEnum =
   'siteMetadata___author' |
   'siteMetadata___recaptchaSiteKey' |
   'siteMetadata___apiBaseUri' |
+  'port' |
+  'host' |
   'polyfill' |
   'pathPrefix' |
   'buildTime';
@@ -2267,6 +2319,8 @@ export type SiteFilterInput = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  port?: Maybe<IntQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
@@ -2898,7 +2952,7 @@ export type PersonalSkillsQueryQuery = { dataJson: Maybe<{ skills: Maybe<{ perso
 export type ProfessionalSkillsQueryQueryVariables = {};
 
 
-export type ProfessionalSkillsQueryQuery = { dataJson: Maybe<{ skills: Maybe<{ professional: Maybe<{ Languages: Maybe<(Pick<DataJsonSkillsProfessionalLanguages, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalLanguagesData, 'experienceFrom' | 'icon' | 'name' | 'rating'>>>> })>, Frameworks: Maybe<(Pick<DataJsonSkillsProfessionalFrameworks___Libraries, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalFrameworks___LibrariesData, 'experienceFrom' | 'icon' | 'image' | 'name' | 'rating' | 'tooltip'>>>> })>, Database: Maybe<(Pick<DataJsonSkillsProfessionalDatabase, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalDatabaseData, 'experienceFrom' | 'image' | 'name' | 'rating' | 'tooltip'>>>> })>, Tools: Maybe<(Pick<DataJsonSkillsProfessionalTools, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalToolsData, 'experienceFrom' | 'icon' | 'name' | 'rating'>>>> })>, Other: Maybe<(Pick<DataJsonSkillsProfessionalOther, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalOtherData, 'experienceFrom' | 'name' | 'rating'>>>> })> }> }> }> };
+export type ProfessionalSkillsQueryQuery = { dataJson: Maybe<{ skills: Maybe<{ professional: Maybe<{ Languages: Maybe<(Pick<DataJsonSkillsProfessionalLanguages, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalLanguagesData, 'experienceFrom' | 'icon' | 'name' | 'rating'>>>> })>, Frameworks: Maybe<(Pick<DataJsonSkillsProfessionalFrameworks___Libraries, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalFrameworks___LibrariesData, 'experienceFrom' | 'icon' | 'image' | 'name' | 'rating' | 'tooltip'>>>> })>, DevOps: Maybe<(Pick<DataJsonSkillsProfessionalDevOps, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalDevOpsData, 'experienceFrom' | 'icon' | 'image' | 'name' | 'rating' | 'tooltip'>>>> })>, Database: Maybe<(Pick<DataJsonSkillsProfessionalDatabase, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalDatabaseData, 'experienceFrom' | 'image' | 'name' | 'rating' | 'tooltip'>>>> })>, Tools: Maybe<(Pick<DataJsonSkillsProfessionalTools, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalToolsData, 'experienceFrom' | 'icon' | 'name' | 'rating'>>>> })>, Other: Maybe<(Pick<DataJsonSkillsProfessionalOther, 'icon'> & { data: Maybe<Array<Maybe<Pick<DataJsonSkillsProfessionalOtherData, 'experienceFrom' | 'name' | 'rating'>>>> })> }> }> }> };
 
 export type Unnamed_2_QueryVariables = {};
 

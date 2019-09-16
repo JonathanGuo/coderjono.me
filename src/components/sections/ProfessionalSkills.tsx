@@ -24,12 +24,24 @@ const ProfessionalSkills: React.FunctionComponent<{}> = props => {
               icon
               data {
                 experienceFrom
+                image
                 icon
                 name
                 rating
               }
             }
             Frameworks: Frameworks___Libraries {
+              icon
+              data {
+                experienceFrom
+                icon
+                image
+                name
+                rating
+                tooltip
+              }
+            }
+            DevOps {
               icon
               data {
                 experienceFrom
