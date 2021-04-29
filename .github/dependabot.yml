@@ -1,0 +1,33 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "17:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@graphql-codegen/typescript-react-apollo"
+    versions:
+    - 2.2.1
+    - 2.2.2
+    - 2.2.3
+  - dependency-name: "@typescript-eslint/eslint-plugin-tslint"
+    versions:
+    - 4.11.1
+    - 4.15.2
+  - dependency-name: gatsby-plugin-sharp
+    versions:
+    - 2.13.2
+  - dependency-name: gatsby-plugin-offline
+    versions:
+    - 3.9.0
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: "@types/react-helmet"
+    versions:
+    - 6.1.0
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
