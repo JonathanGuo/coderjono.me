@@ -32,7 +32,7 @@
     "gatsby-plugin-typescript": "^2.1.7",
     "gatsby-plugin-typescript-checker": "^1.1.1",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-filesystem": "^2.1.22",
+    "gatsby-source-filesystem": "^4.21.0",
     "gatsby-transformer-json": "^2.2.8",
     "gatsby-transformer-sharp": "^2.2.14",
     "lodash": "^4.17.15",
