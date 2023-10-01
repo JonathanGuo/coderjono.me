@@ -17,7 +17,7 @@
     "dotenv": "^8.1.0",
     "firebase": "^6.6.1",
     "formik": "^1.5.8",
-    "gatsby": "^2.15.15",
+    "gatsby": "^3.0.0",
     "gatsby-image": "^2.2.19",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-generate-typings": "^0.9.8-r1",
@@ -46,7 +46,7 @@
     "react-recaptcha": "^2.3.10",
     "react-waypoint": "^9.0.2",
     "styled-components": "^4.3.2",
-    "tailwindcss": "^1.1.2",
+    "tailwindcss": "^2.2.0",
     "tailwindcss-transitions": "^2.1.0",
     "typescript": "^3.6.3",
     "yup": "^0.27.0"
